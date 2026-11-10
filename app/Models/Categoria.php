@@ -24,5 +24,5 @@ class Categoria extends Model
     public function platillos(): HasMany
     {
         return $this->hasMany(Platillo::class);
-    }
+        }
 }

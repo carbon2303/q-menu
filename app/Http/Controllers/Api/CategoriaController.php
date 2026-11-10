@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
@@ -12,6 +12,14 @@ class CategoriaController extends Controller
     public function index()
     {
         $categorias = Categoria::all();
+
+        return response()->json($categorias, 200);
+    }
+
+    // Mostrar categorias con sus platillos (Eloquent ORM)
+    public function mostrarCategorias()
+    {
+        $categorias = Categoria::with('platillos')->get();
 
         return response()->json($categorias, 200);
     }
