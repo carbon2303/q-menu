@@ -16,7 +16,7 @@ class CategoriaController extends Controller
         return response()->json($categorias, 200);
     }
 
-    // Mostrar categorias con sus platillos (Eloquent ORM)
+    
     public function mostrarCategorias()
     {
         $categorias = Categoria::with('platillos')->get();
